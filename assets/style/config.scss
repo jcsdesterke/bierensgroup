@@ -4,10 +4,14 @@
 $color-black: #000;
 $color-white: #fff;
 $color-grey: #f7f7f7;
-$color-grey--darker: #8b8b8b;
+$color-grey--darker: #cccccc;
+
+$color-primary: #219ebc;
+$color-secondary: #fb8500;
 
 // Font families
 $font-body: "Poppins", sans-serif;
+$font-body-size: "15px";
 
 // Media queries
 $breakpoints: (
