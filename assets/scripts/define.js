@@ -13,7 +13,7 @@ var firebaseConfig = {
 biri.init(firebaseConfig);
 
 // Retrieve the user id
-const userId = localStorage.getItem("userid");
+let userId = localStorage.getItem("userid");
 
 // Function to generate a unique 12 digit ID
 var ID = function () {
@@ -24,7 +24,12 @@ var ID = function () {
 if (userId === null) {
   const uniqueId = ID();
   localStorage.setItem("userid", uniqueId);
-  console.log(`New user id generated: ${uniqueId}`);
-} else {
-  console.log(`Existing user: ${userId}`);
+  userId = localStorage.getItem("userid");
+
+  const userGeneralInfo = {
+    id: userId,
+  };
+
+  // Add new user to the database
+  biri.addPlain(`users/${userId}/general`, userGeneralInfo);
 }
