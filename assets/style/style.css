@@ -92,14 +92,6 @@ body {
   opacity: 1;
 }
 
-.c_frame {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
 @keyframes dash {
   from {
     stroke-dashoffset: 1000;
@@ -107,4 +99,14 @@ body {
   to {
     stroke-dashoffset: 400;
   }
+}
+
+.c_section {
+  width: 100%;
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.c_section:nth-child(even) {
+  background: #cccccc;
 }
