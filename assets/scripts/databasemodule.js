@@ -67,6 +67,20 @@ const biri = (function () {
     return result;
   };
 
+  public_functions.readData = async function (reference) {
+    var ref = firebase.database().ref(reference);
+
+    ref.on(
+      "value",
+      function (snapshot) {
+        console.log(snapshot.val());
+      },
+      function (error) {
+        console.log("Error: " + error.code);
+      }
+    );
+  };
+
   /**
    * With this function you can search for values in a specified table with multiple objects. The result you get is an array with all the objects in it that correspond with the keyword you are looking for.
    *
