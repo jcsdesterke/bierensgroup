@@ -20,16 +20,22 @@ var ID = function () {
   return "_" + Math.random().toString(36).substr(2, 15);
 };
 
+const userGeneralInfo = {
+  id: userId,
+};
+
 // If there is no user id yet, generate a new one, otherwise retrieve the existing one
 if (userId === null) {
   const uniqueId = ID();
   localStorage.setItem("userid", uniqueId);
   userId = localStorage.getItem("userid");
 
-  const userGeneralInfo = {
-    id: userId,
-  };
-
   // Add new user to the database
   biri.addPlain(`users/${userId}/general`, userGeneralInfo);
 }
+
+biri.search("users/" + userId).then((result) => {
+  if (result[0] === "No matches found") {
+    biri.update("users/" + userId + "/general/", userGeneralInfo);
+  }
+});
