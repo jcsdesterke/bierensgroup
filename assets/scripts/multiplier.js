@@ -145,3 +145,24 @@ function startCalcMultiplier(){
     },1000);
 }
 startCalcMultiplier();
+
+
+
+/* ---------- Calculate funnelscore ---------- */
+
+
+
+biri.search('users/' + userId + '/pagevisits' , '').then((pageVisits) => {
+
+    let allFunnelPoints = 0;
+    let allMultipliers = 0;
+    let funnelScore = 0;
+
+    for (let i = 0; i < pageVisits.length; i ++) {
+        const pageVisit = pageVisits[i];
+        allFunnelPoints += pageVisit.funnelPoints * pageVisit.multiplier;
+        allMultipliers += pageVisit.multiplier;
+    }
+    funnelScore = allFunnelPoints/allMultipliers;
+    console.log(funnelScore);
+    });
