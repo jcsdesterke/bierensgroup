@@ -21,6 +21,10 @@ visitData.funnelPoints = pageFunnelPoints;
 
 // Analyse the page tags and update the count in the database
 let tagData = {};
+for (let i = 0; i < pageTags.length; i++) {
+  pageTags[i] = pageTags[i].toLowerCase();
+}
+visitData.pageTags = pageTags;
 
 // Loop through all tags and increase the count
 for (let i = 0; i < pageTags.length; i += 1) {

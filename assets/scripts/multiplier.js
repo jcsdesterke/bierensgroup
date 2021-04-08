@@ -112,7 +112,7 @@ let readingScore = 1;
 let multiplier = 1;
 let scrollDepth = 0;
 
-let multiplierTimer
+let multiplierTimer = 0;
 
 function startCalcMultiplier(){
     
@@ -148,21 +148,44 @@ startCalcMultiplier();
 
 
 
-/* ---------- Calculate funnelscore ---------- */
+/* ---------- Calculate funnelscore and generate array of all tags with multipliers ---------- */
 
+let calculatingResultsTimer = 0;
 
+function startCalculatingResults(){
 
-biri.search('users/' + userId + '/pagevisits' , '').then((pageVisits) => {
+    calculatingResultsTimer = setInterval(function(){
 
-    let allFunnelPoints = 0;
-    let allMultipliers = 0;
-    let funnelScore = 0;
+        biri.search('users/' + userId + '/pagevisits' , '').then((pageVisits) => {
 
-    for (let i = 0; i < pageVisits.length; i ++) {
-        const pageVisit = pageVisits[i];
-        allFunnelPoints += pageVisit.funnelPoints * pageVisit.multiplier;
-        allMultipliers += pageVisit.multiplier;
-    }
-    funnelScore = allFunnelPoints/allMultipliers;
-    console.log(funnelScore);
-    });
+            let allFunnelPoints = 0;
+            let allMultipliers = 0;
+            let funnelScore = 0;
+            let allTags = [];
+            
+            for (let i = 0; i < pageVisits.length; i ++) {
+                const pageVisit = pageVisits[i];
+                allFunnelPoints += pageVisit.funnelPoints * pageVisit.multiplier;
+                allMultipliers += pageVisit.multiplier;
+        
+                let pageTags = pageVisit.pageTags;
+        
+                for (let j = 0; j < pageVisit.multiplier; j++) {
+                    
+                    for (let k = 0; k < pageTags.length; k++) {
+                        allTags.push(pageVisit.pageTags[k]);
+                    }
+                }
+        
+            }
+            funnelScore = allFunnelPoints/allMultipliers;
+        
+            //logging total funnelscore and array of all tags
+            console.log("funnelscore: " + funnelScore);
+            console.log(allTags);
+            });
+
+    },2000);
+}
+startCalculatingResults();
+
