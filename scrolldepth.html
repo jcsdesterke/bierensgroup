@@ -11,6 +11,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
     />
     <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/monitor.css" />
 
     <meta name="keywords" content="Aaanmaning, MKB" />
 
@@ -27,6 +28,26 @@
   </head>
 
   <body>
+    <div class="c_monitor">
+      <div class="row d-flex flex-column">
+        <div class="c_monitor__title col">User Behaviour Monitor</div>
+        <div class="c_monitor__progress col">
+          <div class="c_monitor__progress__bar"></div>
+          <div class="c_monitor__progress__number">
+            CONVERSION INDICATOR: 68%
+          </div>
+        </div>
+        <div class="c_monitor__stats col">
+          <table class="c_monitor__stats__table">
+            <tr>
+              <th></th>
+              <th>Value</th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
     <!-- Content container enabling the user to scroll -->
     <div class="c_section d-flex align-items-center">
       <div class="c_contentblock container">
@@ -122,8 +143,7 @@
     <script src="assets/scripts/define.js"></script>
     <script src="assets/scripts/createvisit.js"></script>
     <script src="assets/scripts/calltoaction.js"></script>
-    <script src="assets/scripts/contenttimer.js"></script>
-    <script src="assets/scripts/scrolldepth.js"></script>
-    <script src="assets/scripts/activepagetime.js"></script>
+    <script src="assets/scripts/monitor.js"></script>
+    <script src="assets/scripts/multiplier.js"></script>
   </body>
 </html>

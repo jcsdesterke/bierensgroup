@@ -9,6 +9,7 @@ let visitId = "";
 // Add a visit to the user's pagevisits and generate a unique id for the visit
 biri.add("users/" + userId + "/pagevisits", visitData).then((result) => {
   visitId = result.id;
+  localStorage.setItem("visitId", visitId);
 });
 
 // Update the visit data every 2 seconds
