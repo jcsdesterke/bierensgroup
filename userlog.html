@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bierens - Userlog</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/userlog.css" />
+    <link rel="stylesheet" href="assets/style/loading-bar.css" />
+
+    <script type="text/javascript" src="assets/scripts/extern/loading-bar.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+    <script src="assets/scripts/databasemodule.js"></script>
+    
+
+    <script>
+      const pageId = "hscbcyu3";
+      const pageFunnelPoints = 8;
+      const pageTags = ["gebruikerslog"];
+    </script>
+
+
+  </head>
+
+  <body>
+    
+    <div class="container_fluid">
+      <div class="row">
+        <div class="c_userlog col-xl">
+
+          <div class="c_userlog-title">
+            <h2>Gebruikers log</h2>
+          </div>
+
+          <div class="c_userlog-progressbar">
+            Progressbar            
+            
+            <div class="ldBar" style="width: 100%;"></div>
+
+
+          </div>
+
+          <div class="c_userlog-pagetable">
+            Pagetable<br>
+            <p id="pageTable">0</p>
+          </div>
+
+        </div>
+        <div class="c_datainput col-xl">
+          
+        </div>
+        
+        <div class="col-xl">
+
+          <div class="c_datainput-progressbar">
+            Verander progressbar waarde:
+            <input type="number" id="valueInput" min="0" max="100">
+            <button type="submit" onclick="setProgressValue(document.getElementById('valueInput').value)">veranderen</button>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <script src="assets/scripts/define.js"></script>
+    <script src="assets/scripts/createvisit.js"></script>
+    <script type="text/javascript" src="assets/scripts/setbarvalue.js"></script>
+    <script type="text/javascript" src="assets/scripts/pagelist.js"></script>
+
+  </body>
+</html>
