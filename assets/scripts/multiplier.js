@@ -181,8 +181,10 @@ function startCalculatingResults(){
             funnelScore = allFunnelPoints/allMultipliers;
         
             //logging total funnelscore and array of all tags
-            console.log("funnelscore: " + funnelScore);
-            console.log(allTags);
+            // console.log("funnelscore: " + funnelScore);
+            // console.log(allTags);
+            changeFunction(allMultipliers, allTags);
+
             });
 
     },2000);

@@ -3,24 +3,43 @@
 console.log(userId);
 
 
-biri.search('users/' + userId + '/pagevisits' , '').then((result) => {
-    console.log(result);
-
-
-    for (let i = 0; i < result.length; i += 1) {
-        const pageList = result[i];
-
-        console.log(pageList);
-
-    }
-    });
 
 
 
-var pagelist = [
-    { date: '12/1/2011', reading: 3, id: 20055 },
-    { date: '13/1/2011', reading: 5, id: 20053 },
-    { date: '14/1/2011', reading: 6, id: 45652 }
-];
+// biri.search('users/' + userId + '/pagevisits', '').then((pageVisits) => {
 
-document.getElementById("pageTable").textContent = pagelist[1].id;
+
+//     let tagAantal;
+//     let onderwerp;
+    
+//     pageTags = pageVisits.pageTags;
+
+//     for (let i = 0; i < pageVisits.length; i++) {
+
+//         const pageVisit = pageVisits[i];
+//         onderwerp = pagevisit.pageTags;
+//         tagAantal = tag.count
+
+//         console.log('funnel punten per onderwerp = ' + onderwerp + ' ' + tagAantal);
+
+        
+//         document.getElementById("pageTable").innerHTML = onderwerp + ' ' + tagAantal;
+        
+        
+    
+//     }
+// });
+
+
+
+function changeFunction(x, z) {
+
+        var funnelScore = x;
+        var tagsArray = z;
+
+        console.log(funnelScore);
+        console.log(tagsArray);        
+
+        ldbar.set(funnelScore, true);
+
+}
