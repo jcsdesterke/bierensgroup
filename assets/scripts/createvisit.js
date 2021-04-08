@@ -16,6 +16,9 @@ setInterval(() => {
   biri.update("users/" + userId + "/pagevisits/" + visitId, visitData);
 }, 2000);
 
+// Add the funnel points to the page visit
+visitData.funnelPoints = pageFunnelPoints;
+
 // Analyse the page tags and update the count in the database
 let tagData = {};
 

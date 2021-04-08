@@ -1,5 +1,3 @@
-const stopwatch = document.getElementById('page_timer');
-
 var timer;
 var timerStart;
 localStorage.setItem('timeSpentOnSite',0);
