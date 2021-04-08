@@ -79,6 +79,13 @@ const scrollValues = [];
 visitData.scrollDepth = 0;
 localStorage.setItem('scrollDepth',0);
 
+//setting scrollDepth to 1 when window is bigger or equal to page
+if(document.body.scrollHeight <= document.body.clientHeight){
+    const scrollDepth = 1;
+    visitData.scrollDepth = scrollDepth;
+    localStorage.setItem('scrollDepth',scrollDepth);
+}
+
 // Run a function to update the scrollDepth everytime the user scrolls
 window.addEventListener("scroll", (event) => {
   let scroll = Math.ceil(window.scrollY);
