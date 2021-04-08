@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bierens - Incassos</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
+    />
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/monitor.css" />
+
+    <meta name="keywords" content="Aaanmaning, MKB" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+    <script src="assets/scripts/databasemodule.js"></script>
+
+    <script>
+      const pageId = "2fdc7a";
+      const pageFunnelPoints = 8;
+      const pageTags = ["Incassos", "Geld terug", "Gedupeerd"];
+    </script>
+  </head>
+
+  <body>
+    <div class="c_monitor">
+      <div class="row d-flex flex-column">
+        <div class="c_monitor__title col">User Behaviour Monitor</div>
+        <div class="c_monitor__progress col">
+          <div class="c_monitor__progress__bar" id="monitor-progressbar"></div>
+          <div class="c_monitor__progress__number">
+            CONVERSION INDICATOR: <span id="conversion-indicator">0</span>%
+          </div>
+          <br />
+        </div>
+        <div class="c_monitor__title col">Top 3 tags:</div>
+        <div class="c_monitor__taglist col" id="monitor-taglist"></div>
+        <br />
+        <div class="c_monitor__title col">Raw data of page visit</div>
+        <div class="c_monitor__stats col">
+          <table class="c_monitor__stats__table">
+            <tr>
+              <th>Asset</th>
+              <th>Value</th>
+            </tr>
+          </table>
+        </div>
+
+        <div class="c_monitor__reset col">Reset the monitor</div>
+
+        <div class="c_monitor__links col d-flex flex-row">
+          <a href="aanmaningen.html">Aanmaningen</a>
+          <a href="tarieven.html">Tarieven</a>
+          <a href="incassos.html">Incassos</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content container enabling the user to scroll -->
+    <div class="c_section d-flex align-items-center">
+      <div class="c_contentblock container">
+        <div class="row">
+          <div class="c_contentblock__text col-12 col-md-8">
+            <h1>Incassos</h1>
+
+            <h3>Tags: Incassos, Geld terug, Gedupeerd</h3>
+
+            <p>
+              De Tweede Kamer praat sinds vanochtend over de verkiezing van een
+              nieuwe voorzitter. Kamerleden van alle fracties konden vragen
+              stellen aan de drie kandidaten, huidig voorzitter Arib (PvdA) en
+              haar concurrenten Bergkamp (D66) en Bosma (PVV). Bijna alle
+              Kamerleden wezen erop dat de informatie van het kabinet aan de
+              Kamer moet worden verbeterd en dat er meer dualisme moet komen
+              (een duidelijke scheiding tussen de regering die regeert en het
+              parlement dat controleert). Daarbij zou met name aandacht moeten
+              worden besteed aan de oppositie.
+            </p>
+
+            <p>
+              Arib kreeg de vraag wat haar eigen rol daarin de afgelopen jaren
+              is geweest. SP-woordvoerder Leijten zei ook dat de Kamer als één
+              man moet optreden als individuele leden met een kluitje in het
+              riet worden gestuurd: "Een aanval op één, is een aanval op allen."
+              Ook benadrukten veel Kamerleden dat er meer aandacht en tijd moet
+              komen voor wetgeving. Zowel PVV als Forum voor Democratie zou het
+              liefst zien dat de voorzitter lid is van een oppositiepartij.
+            </p>
+
+            <p>
+              Denk-Kamerlid Van Baarle zei dat Bosma geen voorzitter kan worden,
+              omdat hij "stelselmatig mensen met een migratie-achtergrond
+              uitsluit". Volgens hem kan Bosma niet op een geloofwaardige manier
+              een staatshoofd van een islamitisch land ontvangen. Volt-voorman
+              Dassen en Bij1-leider Simons uitten zich op een soortgelijke
+              manier.
+            </p>
+
+            <p>
+              Van Baarle wees er ook op dat de PVV voor het afnemen van het
+              kiesrecht voor mensen met een dubbele nationaliteit is. Ook
+              D66-Kamerlid Sneller benadrukte dat. Op vragen van SP-Kamerlid
+              Leijten antwoordde PVV-woordvoerder Markuszower dat Bosma als
+              voorzitter geen PVV-standpunten zal innemen, maar dat hij de
+              mening van de Kamer als geheel zal verwoorden. Markuszower zei ook
+              dat Arib het voorzitterschap "geweldig" heeft gedaan, maar dat de
+              PVV één formeel bezwaar tegen Arib heeft: haar dubbele
+              nationaliteit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="c_section"></div>
+    <div class="c_section"></div>
+    <div class="c_section"></div>
+    <div class="c_section"></div>
+
+    <!-- Chatbot CTA module -->
+    <div class="c_chatbot container-fluid p-5">
+      <div class="row d-flex justify-content-end">
+        <div class="col c_chatbot-cta-col">
+          <div
+            class="c_chatbot-cta d-flex flex-row justify-content-between align-items-center"
+          >
+            <div class="c_chatbot-cta-icon">
+              <svg
+                width="113"
+                height="126"
+                viewBox="0 0 113 126"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M105.6 13.8315C62.0841 -0.352119 21.511 7.92167 6.66389 13.8315C0.631213 70.8884 37.196 107.718 56.2324 119C104.816 87.0062 109.387 35.5569 105.6 13.8315Z"
+                  stroke="white"
+                  stroke-width="11.2438"
+                />
+                <path
+                  d="M60.9704 59.8856C60.9704 62.0618 59.7891 62.9323 57.3019 62.9323H51.0219V56.7145H57.3019C59.7891 56.7145 60.9704 57.7715 60.9704 59.8856ZM60.0378 44.0923C60.0378 46.2064 58.8564 47.1391 56.3693 47.1391H51.0219V40.9212H56.3693C58.8564 40.9212 60.0378 41.9161 60.0378 44.0923ZM75.0849 61.9374C75.0849 57.0254 72.1003 52.7351 66.6908 51.4293C71.0433 50.3101 74.09 46.7038 74.09 41.4187C74.09 33.7708 68.4318 29.9779 59.6647 29.9779H37.2184V74H60.2865C69.8619 74 75.0849 69.6475 75.0849 61.9374Z"
+                  fill="white"
+                />
+              </svg>
+            </div>
+
+            <div class="c_chatbot-cta-slug">
+              Heeft u ervaring met het verzenden van een aanmaning?
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/scripts/define.js"></script>
+    <script src="assets/scripts/createvisit.js"></script>
+    <script src="assets/scripts/calltoaction.js"></script>
+    <script src="assets/scripts/monitor.js"></script>
+    <script src="assets/scripts/multiplier.js"></script>
+  </body>
+</html>

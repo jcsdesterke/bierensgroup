@@ -56,4 +56,35 @@
       }
     }
   }
+
+  &__reset {
+    font-weight: 600;
+    color: $color-primary;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__links {
+    margin-top: 16px;
+
+    a {
+      font-weight: 500;
+      color: $color-secondary;
+      transition: color 0.2s ease-in-out;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+
+    a + a {
+      margin-left: 16px;
+    }
+  }
 }

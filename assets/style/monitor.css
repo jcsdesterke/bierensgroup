@@ -54,3 +54,34 @@
 .c_monitor__stats table tr:nth-child(even) {
   background: #f7f7f7;
 }
+
+.c_monitor__reset {
+  font-weight: 600;
+  color: #253b82;
+  margin-top: 16px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.c_monitor__reset:hover {
+  color: #1fb64f;
+}
+
+.c_monitor__links {
+  margin-top: 16px;
+}
+
+.c_monitor__links a {
+  font-weight: 500;
+  color: #1fb64f;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.c_monitor__links a:hover {
+  color: #253b82;
+}
+
+.c_monitor__links a + a {
+  margin-left: 16px;
+}

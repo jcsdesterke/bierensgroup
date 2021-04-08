@@ -1,19 +1,19 @@
-let visitIdLocal = '';
+let visitIdLocal = "";
 setTimeout(() => {
   visitIdLocal = localStorage.getItem("visitId");
   biri.search(`users/${userId}/pagevisits`, visitIdLocal).then((result) => {
     const keys = Object.keys(result[0]);
-  
+
     for (let i = 0; i < keys.length; i += 1) {
       const table = document.querySelector(".c_monitor__stats__table");
-  
+
       // Create an empty <tr> element and add it to the 1st position of the table:
       var row = table.insertRow(1);
-  
+
       // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
-  
+
       // Add some text to the new cells:
       cell1.innerHTML = keys[i];
       cell2.innerHTML = result[0][keys[i]];
@@ -24,22 +24,20 @@ setTimeout(() => {
   startUpdatingMonitor();
 }, 3000);
 
-
 // Retrieve new data every 2 seconds and update the monitor
-function startUpdatingMonitor(){
+function startUpdatingMonitor() {
   setInterval(() => {
     biri.search(`users/${userId}/pagevisits`, visitIdLocal).then((result) => {
       const keys = Object.keys(result[0]);
-  
+
       for (let i = 0; i < keys.length; i += 1) {
         const keyValue = result[0][keys[i]];
-  
+
         document.querySelector(`.${keys[i]}`).innerText = result[0][keys[i]];
       }
     });
   }, 1000);
 }
-
 
 /* ---------- Calculate funnelscore and generate array of all tags with multipliers ---------- */
 
@@ -77,58 +75,53 @@ function startCalculatingResults() {
 startCalculatingResults();
 
 //funtion to update the values in html and css
-function updateMonitorFunnelScore(score){
+function updateMonitorFunnelScore(score) {
   score = parseInt(score * 100) / 10;
-  document.getElementById('conversion-indicator').innerHTML = score;
-  document.getElementById('monitor-progressbar').style.width = score + "%";
+  document.getElementById("conversion-indicator").innerHTML = score;
+  document.getElementById("monitor-progressbar").style.width = score + "%";
 }
 
 //function that counts, orders and displays the tags
-function updateMonitorTagList(tags){
+function updateMonitorTagList(tags) {
   let tagCountArr = [];
   let objIndex = 0;
 
   //analysing and counting tags. Insert them into array of objects with 'name' and 'count'
-  for (i=0;i<tags.length;i++) {
-    
-    objIndex = tagCountArr.findIndex((obj => obj.name == tags[i]));
-      
-    if (objIndex >= 0){
+  for (i = 0; i < tags.length; i++) {
+    objIndex = tagCountArr.findIndex((obj) => obj.name == tags[i]);
+
+    if (objIndex >= 0) {
       tagCountArr[objIndex].count++;
-    }
-    else{
-      tagCountArr.push({name: tags[i], count: 1});
+    } else {
+      tagCountArr.push({ name: tags[i], count: 1 });
     }
   }
-
 
   //sorting array with values based on tag counts
   tagCountArr.sort(compareValues);
 
   //displaying top 3 tags
-  document.getElementById('monitor-taglist').innerHTML = '';
+  document.getElementById("monitor-taglist").innerHTML = "";
 
   //The amount of listitems is set in this for-loop
-  for (j=0; j < 3; j++){
-    let tagListItem = '';
+  for (j = 0; j < 3; j++) {
+    let tagListItem = "";
 
     //checking if there are more than 3 values in the array
-    if(j < tagCountArr.length){
-      tagListItem = (j+1)+ '. ' + tagCountArr[j].name + '<br/>';
+    if (j < tagCountArr.length) {
+      tagListItem = j + 1 + ". " + tagCountArr[j].name + "<br/>";
+    } else {
+      tagListItem = j + 1 + ". -<br/>";
     }
-    else{
-      tagListItem = (j+1)+ '. -<br/>';
-    }
-    
+
     //set tags in top 3 list
-    document.getElementById('monitor-taglist').innerHTML += tagListItem;
+    document.getElementById("monitor-taglist").innerHTML += tagListItem;
   }
 }
 // function to sort order on highest tag count
 function compareValues(a, b) {
-
-  const countA = a.count
-  const countB = b.count
+  const countA = a.count;
+  const countB = b.count;
 
   let comparison = 0;
   if (countA > countB) {
@@ -139,3 +132,11 @@ function compareValues(a, b) {
   // reverting order so the highest number gets on top
   return comparison * -1;
 }
+
+// Monitor reset button
+const resetBtn = document.querySelector(".c_monitor__reset");
+
+resetBtn.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});

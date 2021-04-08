@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bierens - Prototype</title>
+    <title>Bierens - Tarieven</title>
 
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap-grid.min.css"
     />
     <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/monitor.css" />
 
     <meta name="keywords" content="Aaanmaning, MKB" />
 
@@ -20,20 +21,55 @@
     <script src="assets/scripts/databasemodule.js"></script>
 
     <script>
-      const pageId = "2k3fa";
-      const pageFunnelPoints = 2;
-      const pageTags = ["Multiplier", "Readingscore"];
+      const pageId = "02ids2d";
+      const pageFunnelPoints = 5;
+      const pageTags = ["Tarieven", "Geld"];
     </script>
   </head>
 
   <body>
+    <div class="c_monitor">
+      <div class="row d-flex flex-column">
+        <div class="c_monitor__title col">User Behaviour Monitor</div>
+        <div class="c_monitor__progress col">
+          <div class="c_monitor__progress__bar" id="monitor-progressbar"></div>
+          <div class="c_monitor__progress__number">
+            CONVERSION INDICATOR: <span id="conversion-indicator">0</span>%
+          </div>
+          <br />
+        </div>
+        <div class="c_monitor__title col">Top 3 tags:</div>
+        <div class="c_monitor__taglist col" id="monitor-taglist"></div>
+        <br />
+        <div class="c_monitor__title col">Raw data of page visit</div>
+        <div class="c_monitor__stats col">
+          <table class="c_monitor__stats__table">
+            <tr>
+              <th>Asset</th>
+              <th>Value</th>
+            </tr>
+          </table>
+        </div>
+
+        <div class="c_monitor__reset col">Reset the monitor</div>
+
+        <div class="c_monitor__links col d-flex flex-row">
+          <a href="aanmaningen.html">Aanmaningen</a>
+          <a href="tarieven.html">Tarieven</a>
+          <a href="incassos.html">Incassos</a>
+        </div>
+      </div>
+    </div>
 
     <!-- Content container enabling the user to scroll -->
     <div class="c_section d-flex align-items-center">
       <div class="c_contentblock container">
         <div class="row">
           <div class="c_contentblock__text col-12 col-md-8">
-            <h1>An example</h1>
+            <h1>Tarieven</h1>
+
+            <h3>Tags: Tarieven, Geld</h3>
+
             <p>
               De Tweede Kamer praat sinds vanochtend over de verkiezing van een
               nieuwe voorzitter. Kamerleden van alle fracties konden vragen
@@ -123,6 +159,7 @@
     <script src="assets/scripts/define.js"></script>
     <script src="assets/scripts/createvisit.js"></script>
     <script src="assets/scripts/calltoaction.js"></script>
+    <script src="assets/scripts/monitor.js"></script>
     <script src="assets/scripts/multiplier.js"></script>
   </body>
 </html>
