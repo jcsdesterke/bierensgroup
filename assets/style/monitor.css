@@ -22,7 +22,7 @@
 }
 
 .c_monitor__progress__bar {
-  width: 100%;
+  width: 0%;
   height: 3px;
   background: #253b82;
 }

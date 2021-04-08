@@ -22,7 +22,7 @@
 
     <script>
       const pageId = "2fdc7a";
-      const pageFunnelPoints = 2;
+      const pageFunnelPoints = 8;
       const pageTags = ["Aanmaning", "MKB"];
     </script>
   </head>
@@ -32,15 +32,20 @@
       <div class="row d-flex flex-column">
         <div class="c_monitor__title col">User Behaviour Monitor</div>
         <div class="c_monitor__progress col">
-          <div class="c_monitor__progress__bar"></div>
+          <div class="c_monitor__progress__bar" id="monitor-progressbar"></div>
           <div class="c_monitor__progress__number">
-            CONVERSION INDICATOR: 68%
+            CONVERSION INDICATOR: <span id="conversion-indicator">0</span>%
           </div>
+          <br>
         </div>
+        <div class="c_monitor__title col">Top 3 tags:</div>
+        <div class="c_monitor__taglist col" id="monitor-taglist"></div>
+        <br>
+        <div class="c_monitor__title col">Raw data of page visit</div>
         <div class="c_monitor__stats col">
           <table class="c_monitor__stats__table">
             <tr>
-              <th></th>
+              <th>Asset</th>
               <th>Value</th>
             </tr>
           </table>

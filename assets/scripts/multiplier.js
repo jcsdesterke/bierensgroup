@@ -126,7 +126,7 @@ function startCalcMultiplier() {
         }
       }
     }
-    multiplier = parseInt(readingScore * scrollDepth);
+    multiplier = parseInt(readingScore * scrollDepth * 100)/100;
     if (multiplier == 0) {
       multiplier = 1;
     }
@@ -137,33 +137,3 @@ function startCalcMultiplier() {
 }
 startCalcMultiplier();
 
-/* ---------- Calculate funnelscore and generate array of all tags with multipliers ---------- */
-
-let calculatingResultsTimer = 0;
-
-function startCalculatingResults() {
-  calculatingResultsTimer = setInterval(function () {
-    biri.search("users/" + userId + "/pagevisits", "").then((pageVisits) => {
-      let allFunnelPoints = 0;
-      let allMultipliers = 0;
-      let funnelScore = 0;
-      let allTags = [];
-
-      for (let i = 0; i < pageVisits.length; i++) {
-        const pageVisit = pageVisits[i];
-        allFunnelPoints += pageVisit.funnelPoints * pageVisit.multiplier;
-        allMultipliers += pageVisit.multiplier;
-
-        let pageTags = pageVisit.pageTags;
-
-        for (let j = 0; j < pageVisit.multiplier; j++) {
-          for (let k = 0; k < pageTags.length; k++) {
-            allTags.push(pageVisit.pageTags[k]);
-          }
-        }
-      }
-      funnelScore = allFunnelPoints / allMultipliers;
-    });
-  }, 2000);
-}
-startCalculatingResults();
