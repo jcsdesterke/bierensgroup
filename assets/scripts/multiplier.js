@@ -72,6 +72,10 @@ visitData.estReadingTime = parseInt(estimatedReadingTime);
 // Total height of the page
 const pageHeight = document.body.scrollHeight - document.body.clientHeight;
 
+console.log('pageheight' + pageHeight);
+console.log(document.body.scrollHeight);
+console.log(document.body.clientHeight);
+
 // An array with all the scrollvalues
 const scrollValues = [];
 
@@ -79,16 +83,20 @@ const scrollValues = [];
 visitData.scrollDepth = 0;
 localStorage.setItem('scrollDepth',0);
 
-//setting scrollDepth to 1 when window is bigger or equal to page
-if(document.body.scrollHeight <= document.body.clientHeight){
-    const scrollDepth = 1;
-    visitData.scrollDepth = scrollDepth;
-    localStorage.setItem('scrollDepth',scrollDepth);
-}
+// //setting scrollDepth to 1 when window is bigger or equal to page
+// if(document.body.scrollHeight <= document.body.clientHeight){
+//     const scrollDepth = 1;
+//     visitData.scrollDepth = scrollDepth;
+//     localStorage.setItem('scrollDepth',scrollDepth);
+// }
 
 // Run a function to update the scrollDepth everytime the user scrolls
 window.addEventListener("scroll", (event) => {
   let scroll = Math.ceil(window.scrollY);
+
+  console.log('scroll =' + scroll);
+  console.log('scrollY =' + window.scrollY);
+
   const percentage = Math.floor((scroll / pageHeight) * 1000)/1000;
 
   // Pushm the new value to an array
@@ -183,7 +191,7 @@ function startCalculatingResults(){
             //logging total funnelscore and array of all tags
             // console.log("funnelscore: " + funnelScore);
             // console.log(allTags);
-            changeFunction(allMultipliers, allTags);
+            //changeFunction(allMultipliers, allTags);
 
             });
 

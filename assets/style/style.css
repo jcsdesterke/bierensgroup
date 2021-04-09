@@ -6,6 +6,7 @@ body {
   position: absolute;
   font-family: "Poppins", sans-serif;
   font-size: "15px";
+  overflow-y: scroll;
 }
 
 .c_chatbot {
@@ -103,7 +104,6 @@ body {
 
 .c_section {
   width: 100%;
-  height: 100vh;
   background: #f7f7f7;
 }
 

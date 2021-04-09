@@ -37,8 +37,8 @@ function changeFunction(x, z) {
         var funnelScore = x;
         var tagsArray = z;
 
-        console.log(funnelScore);
-        console.log(tagsArray);        
+        //console.log(funnelScore);
+        //console.log(tagsArray);        
 
         ldbar.set(funnelScore, true);
 
